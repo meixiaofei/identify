@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/local/bin/python
 # encoding=utf8
 import sys
 from pytesseract import *
@@ -71,9 +71,18 @@ for i in range(50):
     identified = identified.replace('==', '=')
     identified = identified.replace('=-', '=')
     identified = identified.replace('=)', '=')
+    identified = identified.replace('.)', '0')
     identified = identified.replace('y', '+')
     identified = identified.replace('Y', '+')
     identified = identified.replace('=', '')
+    identified = identified.replace('«-', '+')
+    identified = identified.replace(' + ', '+')
+    identified = identified.replace('«', '-')
+    identified = identified.replace('v', '-')
+    identified = identified.replace('£', '5')
+    identified = identified.replace('>', '+')
+    identified = identified.replace('n', '6')
+    identified = identified.replace('l', '1')
 
     tmp = identified.split('-')[0]
     print tmp
